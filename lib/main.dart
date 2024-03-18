@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screen/screen1/view/api_test_screen.dart';
-import 'screen/screen1/view/pro_list_test.dart';
-import 'screen/screen2/socal_media_post.dart';
+
 import 'screen/screen3/show/view/screen_home_grid.dart';
 
 void main() {

@@ -24,7 +24,7 @@ class ScreenHomeGrid extends materal.StatelessWidget {
               title: materal.Text('Shows'),
             ),
             body: materal.FutureBuilder<List<ShowModel>>(
-                future: cubit.postsFuture,
+                future: cubit.castFuture,
                 builder: (context, snapshot) {
                   if (snapshot.connectionState ==
                       materal.ConnectionState.waiting) {

@@ -17,7 +17,7 @@ class ShowCubit extends Cubit<ShowState> {
   // late List<ShowModel> showResponseData;
 
   //save this list of posts into a variable
-  Future<List<ShowModel>> postsFuture = getShows();
+  Future<List<ShowModel>> castFuture = getShows();
 
   static Future<List<ShowModel>> getShows() async {
     var url = Uri.parse("https://api.tvmaze.com/shows");
