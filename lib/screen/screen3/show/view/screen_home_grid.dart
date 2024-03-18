@@ -43,7 +43,7 @@ class ScreenHomeGrid extends materal.StatelessWidget {
                         var shows = show[index];
 
                         return materal.InkWell(
-                          onTap: () => materal.Navigator.of(context).push(materal.MaterialPageRoute(builder: (context) => ScreenDetiledShow(shows: shows,),)),
+                          onTap: () => materal.Navigator.of(context).push(materal.MaterialPageRoute(builder: (context) => ScreenDetiledShow(shows: shows,index: index,),)),
                           child: materal.Container(
                             child: materal.Column(
                               children: [

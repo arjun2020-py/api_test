@@ -4,9 +4,11 @@ import '../compoents/screen_custom_elev.dart';
 import '../model/show_model.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:intl/intl.dart';
+
 class ScreenDetiledShow extends material.StatelessWidget {
-  ScreenDetiledShow({super.key, required this.shows});
+  ScreenDetiledShow({super.key, required this.shows, required this.index});
   ShowModel shows;
+  int index;
 
   @override
   material.Widget build(material.BuildContext context) {
@@ -14,12 +16,12 @@ class ScreenDetiledShow extends material.StatelessWidget {
       backgroundColor: material.Colors.black,
       appBar: material.AppBar(
         leading: material.Container(
-          decoration: material.BoxDecoration(
+          decoration: const material.BoxDecoration(
               shape: material.BoxShape.circle,
               color: material.Color(0xffd9e3f5)),
           child: material.IconButton(
             onPressed: () => material.Navigator.of(context).pop(),
-            icon: material.Icon(
+            icon: const material.Icon(
               material.Icons.arrow_back_ios_new_rounded,
               color: material.Colors.red,
             ),
@@ -27,33 +29,33 @@ class ScreenDetiledShow extends material.StatelessWidget {
         ),
         actions: [
           material.Container(
-            decoration: material.BoxDecoration(
+            decoration: const material.BoxDecoration(
                 shape: material.BoxShape.circle,
                 color: material.Color(0xffd9e3f5)),
             child: material.IconButton(
               onPressed: () => material.Navigator.of(context).pop(),
-              icon: material.Icon(
+              icon: const material.Icon(
                 material.Icons.bookmark,
                 color: material.Colors.red,
               ),
             ),
           ),
-          material.SizedBox(
+          const material.SizedBox(
             width: 10,
           ),
           material.Container(
-            decoration: material.BoxDecoration(
+            decoration: const material.BoxDecoration(
                 shape: material.BoxShape.circle,
                 color: material.Color(0xffd9e3f5)),
             child: material.IconButton(
               onPressed: () => material.Navigator.of(context).pop(),
-              icon: material.Icon(
+              icon: const material.Icon(
                 material.Icons.share,
                 color: material.Colors.red,
               ),
             ),
           ),
-           material.SizedBox(
+          const material.SizedBox(
             width: 10,
           ),
         ],
@@ -69,17 +71,73 @@ class ScreenDetiledShow extends material.StatelessWidget {
               ),
               material.Text(
                 shows.name,
-                style: material.TextStyle(
+                style: const material.TextStyle(
                     color: material.Colors.white, fontSize: 30),
               ),
               material.Text(
                 shows.language.name,
-                style: material.TextStyle(
+                style: const material.TextStyle(
                     color: material.Colors.white, fontSize: 15),
               ),
-            
-              
-              material.SizedBox(
+              material.Row(
+                mainAxisAlignment: material.MainAxisAlignment.center,
+                crossAxisAlignment: material.CrossAxisAlignment.center,
+                children: [
+                  material.Text(
+                    shows.premiered.year.toString(),
+                    style: const material.TextStyle(
+                        color: material.Colors.white, fontSize: 15),
+                  ),
+                  const material.SizedBox(
+                    width: 10,
+                  ),
+                  const material.Text(
+                    '*',
+                    style: material.TextStyle(
+                        color: material.Colors.white, fontSize: 15),
+                  ),
+                  material.Text(
+                    ' ${shows.genres[0].name},',
+                    style: const material.TextStyle(
+                        color: material.Colors.white, fontSize: 15),
+                  ),
+                  material.Text(
+                    ' ${shows.genres[1].name},',
+                    style: const material.TextStyle(
+                        color: material.Colors.white, fontSize: 15),
+                  ),
+                ],
+              ),
+              material.Row(
+                mainAxisAlignment: material.MainAxisAlignment.center,
+                crossAxisAlignment: material.CrossAxisAlignment.center,
+                children: [
+                  const material.Text(
+                    'rating:',
+                    style: material.TextStyle(
+                        color: material.Colors.white, fontSize: 15),
+                  ),
+                  const material.SizedBox(
+                    width: 10,
+                  ),
+                  material.Text(
+                    shows.rating.average.toString(),
+                    style: const material.TextStyle(
+                        color: material.Colors.white, fontSize: 15),
+                  ),
+                  const material.Text(
+                    '/',
+                    style: material.TextStyle(
+                        color: material.Colors.white, fontSize: 15),
+                  ),
+                  const material.Text(
+                    '10',
+                    style: material.TextStyle(
+                        color: material.Colors.white, fontSize: 15),
+                  ),
+                ],
+              ),
+              const material.SizedBox(
                 height: 10,
               ),
               material.Row(
@@ -99,12 +157,13 @@ class ScreenDetiledShow extends material.StatelessWidget {
                   )
                 ],
               ),
-              material.SizedBox(
+              const material.SizedBox(
                 height: 10,
               ),
               HtmlWidget(
                 shows.summary,
-                textStyle: material.TextStyle(color: material.Colors.white),
+                textStyle:
+                    const material.TextStyle(color: material.Colors.white),
               ),
             ],
           ),
